@@ -1,0 +1,39 @@
+@import './fonts';
+@import './variables.scss';
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Press Start 2P', ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  line-height: 1.5;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: inherit;
+  background-color: $background-main;
+  padding: 80px 50px 30px;
+}
+
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+* {
+  font-family: 'Roboto';
+  color: $text-color-main;
+}
+
+pre {
+  font-family: Press Start 2P, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
+}
