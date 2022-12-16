@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC } from 'react';
 import { Show } from '../../api/show-requests/show-dto/show-dto';
 import { Card } from '../card/card';
@@ -13,7 +14,9 @@ export const ShowList: FC<Props> = ({ showList }) => (
     <h2 className={styles.title}>Last Added Shows</h2>
     <div className={styles.list}>
       {showList.map(({ id, image, summary, rating }) => (
-        <Card key={id} image={image} summary={summary} rating={rating} />
+        <Link key={id} href={`/show/${id}`}>
+          <Card image={image} summary={summary} rating={rating} />
+        </Link>
       ))}
     </div>
   </div>
