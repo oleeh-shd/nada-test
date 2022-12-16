@@ -3,8 +3,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  font-family: 'Press Start 2P', ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: 'Press Start 2P', ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
   line-height: 1.5;
   tab-size: 4;
   scroll-behavior: smooth;
@@ -13,7 +14,7 @@ html {
 body {
   line-height: inherit;
   background-color: $background-main;
-  padding: 80px 50px 30px;
+  padding: 80px 150px 30px;
 }
 
 h1,
@@ -34,6 +35,6 @@ a {
 }
 
 pre {
-  font-family: Press Start 2P, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
-    monospace;
+  font-family: Press Start 2P, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, Courier New, monospace;
 }

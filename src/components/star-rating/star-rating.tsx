@@ -8,7 +8,14 @@ enum StarStates {
   FULL = 'full',
 }
 
-type Props = Pick<Show, 'rating'>;
+export enum StarRatingSizes {
+  SMALL = 'small',
+  LARGE = 'large',
+}
+
+type Props = Pick<Show, 'rating'> & {
+  size: StarRatingSizes;
+};
 
 const createRating = (rating: number) => {
   const rates = Array.from({ length: 5 }, (_, i) => i + 1);
@@ -24,10 +31,16 @@ const createRating = (rating: number) => {
   );
 };
 
-export const StarRating: FC<Props> = ({ rating }) => (
+export const StarRating: FC<Props> = ({ rating, size }) => (
   <div>
     {createRating(rating.average || 0).map((state, i) => (
-      <Image key={i} src={`/icons/star-${state}.svg`} alt={state} width={20} height={20} />
+      <Image
+        key={i}
+        src={`/icons/star-${state}.svg`}
+        alt={state}
+        width={size === StarRatingSizes.LARGE ? 40 : 20}
+        height={size === StarRatingSizes.LARGE ? 40 : 20}
+      />
     ))}
   </div>
 );

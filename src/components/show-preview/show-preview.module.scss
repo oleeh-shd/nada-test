@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: start;
+  max-width: 1000px;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.title {
+  font-size: 46px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  font-size: 28px;
+  margin-left: 20px;
+}

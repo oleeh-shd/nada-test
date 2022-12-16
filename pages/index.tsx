@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
 import { Show } from '../src/api/show-requests/show-dto/show-dto';
 import { getAllShow } from '../src/api/show-requests/shows-requests';
-import { HomeTitle } from '../src/components/home-title/home-title';
+import { Title } from '../src/components/title/title';
 import { ShowList } from '../src/components/show-list/show-list';
 
 const Home: NextPage<{ showList: Show[] }> = ({ showList }) => {
   return (
     <>
-      <HomeTitle />
+      <Title home />
       <ShowList showList={showList} />
     </>
   );
