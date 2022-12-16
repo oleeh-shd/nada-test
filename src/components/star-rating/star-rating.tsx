@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import { Show } from '../../api/show-requests/show-dto/show-dto';
 
 enum StarStates {
   EMPTY = 'clear',
@@ -7,9 +8,7 @@ enum StarStates {
   FULL = 'full',
 }
 
-type Props = {
-  rating: number;
-};
+type Props = Pick<Show, 'rating'>;
 
 const createRating = (rating: number) => {
   const rates = Array.from({ length: 5 }, (_, i) => i + 1);
@@ -25,12 +24,10 @@ const createRating = (rating: number) => {
   );
 };
 
-export const StarRating: FC<Props> = ({ rating = 0 }) => {
-  return (
-    <div>
-      {createRating(rating).map((state, i) => (
-        <Image key={i} src={`/icons/star-${state}.svg`} alt={state} width={20} height={20} />
-      ))}
-    </div>
-  );
-};
+export const StarRating: FC<Props> = ({ rating }) => (
+  <div>
+    {createRating(rating.average || 0).map((state, i) => (
+      <Image key={i} src={`/icons/star-${state}.svg`} alt={state} width={20} height={20} />
+    ))}
+  </div>
+);

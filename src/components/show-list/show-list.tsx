@@ -1,17 +1,20 @@
 import { FC } from 'react';
+import { Show } from '../../api/show-requests/show-dto/show-dto';
 import { Card } from '../card/card';
+
 import styles from './show-list.module.scss';
 
-export const ShowList: FC = () => {
-  const list = Array(28).fill(1);
-  return (
-    <div className={styles.wrapper}>
-      <h2 className={styles.title}>Last Added Shows</h2>
-      <div className={styles.list}>
-        {list.map((_, i) => (
-          <Card key={i} />
-        ))}
-      </div>
-    </div>
-  );
+type Props = {
+  showList: Show[];
 };
+
+export const ShowList: FC<Props> = ({ showList }) => (
+  <div className={styles.wrapper}>
+    <h2 className={styles.title}>Last Added Shows</h2>
+    <div className={styles.list}>
+      {showList.map(({ id, image, summary, rating }) => (
+        <Card key={id} image={image} summary={summary} rating={rating} />
+      ))}
+    </div>
+  </div>
+);
