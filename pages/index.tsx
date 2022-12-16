@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Show } from '../src/api/show-requests/show-dto/show-dto';
+import { Show } from '../src/api/show-requests/types/show-types';
 import { getAllShow } from '../src/api/show-requests/shows-requests';
 import { Title } from '../src/components/title/title';
 import { ShowList } from '../src/components/show-list/show-list';

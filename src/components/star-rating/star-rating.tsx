@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { Show } from '../../api/show-requests/show-dto/show-dto';
+import { Show } from '../../api/show-requests/types/show-types';
 
 enum StarStates {
   EMPTY = 'clear',

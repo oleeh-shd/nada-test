@@ -10,12 +10,12 @@ export type Show = {
   image: Image;
 };
 
-type Schedule = {
+export type Schedule = {
   days: string[];
   time: string;
 };
 
-type Image = {
+export type Image = {
   medium: string;
   original: string;
 };
@@ -24,7 +24,7 @@ type Rating = {
   average: number | null;
 };
 
-type Network = {
+export type Network = {
   country: { name: string; code: string; timezone: string };
   id: number;
   name: string;

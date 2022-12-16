@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { Show } from '../../api/show-requests/show-dto/show-dto';
+import { Show } from '../../api/show-requests/types/show-types';
 import { removeHtml } from '../card/card';
 import { StarRating, StarRatingSizes } from '../star-rating/star-rating';
 import styles from './show-preview.module.scss';
@@ -19,7 +19,7 @@ export const ShowPreview: FC<Props> = ({ name, image, rating, summary }) => {
           </span>
         </div>
         <h1 className={styles.title}>{name}</h1>
-        <span className={styles.description}>{summary.replace(removeHtml, '')}</span>
+        <span className={styles.description}>{summary?.replace(removeHtml, '')}</span>
       </div>
     </div>
   );
