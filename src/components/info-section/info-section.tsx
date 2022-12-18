@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Cast } from '../../api/show-requests/types/cast-types';
-import { Network, Schedule, Show } from '../../api/show-requests/types/show-types';
+import { Cast } from '../../api/shows-service/types/cast-types';
+import { Network, Schedule, Show } from '../../api/shows-service/types/show-types';
 import { List } from '../list/list';
 import styles from './info-section.module.scss';
 

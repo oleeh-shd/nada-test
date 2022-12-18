@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import { Show } from '../src/api/show-requests/types/show-types';
-import { getAllShow } from '../src/api/show-requests/shows-requests';
+import { Show } from '../src/api/shows-service/types/show-types';
 import { Title } from '../src/components/title/title';
 import { ShowList } from '../src/components/show-list/show-list';
+import { ShowsService } from '../src/api/shows-service/shows-service';
 
 const Home: NextPage<{ showList: Show[] }> = ({ showList }) => {
   return (
@@ -15,7 +15,7 @@ const Home: NextPage<{ showList: Show[] }> = ({ showList }) => {
 
 export async function getServerSideProps() {
   try {
-    const { data } = await getAllShow();
+    const { data } = await ShowsService.getAllShows();
 
     return {
       props: {

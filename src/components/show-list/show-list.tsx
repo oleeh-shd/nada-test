@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FC } from 'react';
-import { Show } from '../../api/show-requests/types/show-types';
+import { Show } from '../../api/shows-service/types/show-types';
 import { Card } from '../card/card';
 
 import styles from './show-list.module.scss';
