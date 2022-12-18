@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
@@ -13,7 +14,9 @@ export const Title: FC<Props> = ({ home }) => {
     <div className={styles.wrapper}>
       {router.pathname !== '/' && (
         <Link href={'/'}>
-          <span>home</span>
+          <div className={styles.back}>
+            <Image src={'/icons/back-arrow.png'} alt="back" width={30} height={30} />
+          </div>
         </Link>
       )}
       <h1 className={styles.title}>TV bland</h1>

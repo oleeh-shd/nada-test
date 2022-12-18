@@ -25,7 +25,40 @@ export async function getServerSideProps() {
   } catch (error) {
     return {
       props: {
-        showList: {},
+        showList: [
+          {
+            id: 1,
+            name: 'qwe',
+            summary: `asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q`,
+          },
+          {
+            id: 2,
+            name: 'qwe',
+            summary: 'asdasdas ',
+          },
+          {
+            id: 1,
+            name: 'qwe',
+            summary:
+              'asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q',
+          },
+          {
+            id: 2,
+            name: 'qwe',
+            summary: 'asdasdas ',
+          },
+          {
+            id: 1,
+            name: 'qwe',
+            summary:
+              'asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q',
+          },
+          {
+            id: 2,
+            name: 'qwe',
+            summary: 'asdasdas ',
+          },
+        ],
       },
     };
   }

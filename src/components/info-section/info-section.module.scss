@@ -1,4 +1,10 @@
+@import '../../../assets/breakPoints.scss';
+
 .wrapper {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: $breakpoint-tablet-large) {
+    flex-direction: column;
+  }
 }

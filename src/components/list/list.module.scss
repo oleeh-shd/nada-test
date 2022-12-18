@@ -1,13 +1,19 @@
 @import '../../../assets/variables.scss';
+@import '../../../assets/breakPoints.scss';
 
 .wrapper {
   display: flex;
   flex-direction: column;
   width: 47%;
+
+  @media screen and (max-width: $breakpoint-tablet-large) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .title {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
@@ -15,13 +21,18 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid $color-white;
+  border-bottom: 1px solid $color-gray;
 }
 
 .key,
 .value {
   font-size: 20px;
   margin: 15px 0;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 16px;
+    margin: 10px 0;
+  }
 }
 
 .value {
@@ -37,4 +48,9 @@
   height: 40px;
   border-radius: 100%;
   background-color: rgb(121, 189, 212);
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 30px;
+    height: 30px;
+  }
 }

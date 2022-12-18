@@ -1,9 +1,15 @@
+@import '../../../assets/breakPoints.scss';
+
 .wrapper {
   margin-bottom: 100px;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-bottom: 50px;
+  }
 }
 
 .title {
-  font-size: 28px;
+  font-size: 46px;
   margin-bottom: 40px;
 }
 

@@ -33,7 +33,7 @@ const createRating = (rating: number) => {
 
 export const StarRating: FC<Props> = ({ rating, size }) => (
   <div>
-    {createRating(rating.average || 0).map((state, i) => (
+    {createRating(rating?.average || 0).map((state, i) => (
       <Image
         key={i}
         src={`/icons/star-${state}.svg`}
