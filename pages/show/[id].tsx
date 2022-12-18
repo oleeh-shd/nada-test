@@ -35,12 +35,18 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data: show } = await ShowsService.getShowById(Number(params?.id));
-  const { data: cast } = await ShowsService.getCastByShowId(Number(params?.id));
+  try {
+    const { data: show } = await ShowsService.getShowById(Number(params?.id));
+    const { data: cast } = await ShowsService.getCastByShowId(Number(params?.id));
 
-  return {
-    props: { show, cast },
-  };
+    return {
+      props: { show, cast },
+    };
+  } catch (error) {
+    return {
+      props: { show: {}, cast: [] },
+    };
+  }
 };
 
 export default Show;

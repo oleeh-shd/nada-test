@@ -28,35 +28,17 @@ export async function getServerSideProps() {
         showList: [
           {
             id: 1,
-            name: 'qwe',
-            summary: `asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q`,
-          },
-          {
-            id: 2,
-            name: 'qwe',
-            summary: 'asdasdas ',
-          },
-          {
-            id: 1,
-            name: 'qwe',
+            name: 'test',
             summary:
-              'asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q',
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit.' +
+              'Labore atque natus ipsum architecto eum expedita possimus ad.' +
+              'Voluptas expedita, accusamus inventore ratione accusantium quasi odit,' +
+              'atque ex nemo eius molestias.',
           },
           {
             id: 2,
-            name: 'qwe',
-            summary: 'asdasdas ',
-          },
-          {
-            id: 1,
-            name: 'qwe',
-            summary:
-              'asdasdas dasa sdsd qweqwe qweqw eqwe qw eqw eqweqweqweqwe qweqweqweq weqweq weq we qwe qweq weqweqweqweqw qweqweqwew qewqeq q',
-          },
-          {
-            id: 2,
-            name: 'qwe',
-            summary: 'asdasdas ',
+            name: 'test1',
+            summary: 'Lorem ipsum dolor',
           },
         ],
       },
