@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Show } from '../../api/shows-service/types/show-types';
 import { Card } from '../card/card';
 
@@ -9,15 +9,23 @@ type Props = {
   showList: Show[];
 };
 
-export const ShowList: FC<Props> = ({ showList }) => (
-  <div className={styles.wrapper}>
-    <h2 className={styles.title}>Last Added Shows</h2>
-    <div className={styles.list}>
-      {showList.map(({ id, image, summary, rating }) => (
-        <Link key={id} href={`/show/${id}`}>
-          <Card image={image} summary={summary} rating={rating} />
-        </Link>
-      ))}
+export const ShowList: FC<Props> = ({ showList }) => {
+  const [itemsToShow, setItemsToShow] = useState(8);
+  return (
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Last Added Shows</h2>
+      <div className={styles.list}>
+        {showList.slice(0, itemsToShow).map(({ id, image, summary, rating }) => (
+          <Link key={id} href={`/show/${id}`}>
+            <Card image={image} summary={summary} rating={rating} />
+          </Link>
+        ))}
+      </div>
+      {itemsToShow < showList.length && (
+        <button className={styles.more} onClick={() => setItemsToShow((prev) => prev + 8)}>
+          show more
+        </button>
+      )}
     </div>
-  </div>
-);
+  );
+};

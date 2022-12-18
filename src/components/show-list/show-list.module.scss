@@ -1,4 +1,5 @@
 @import '../../../assets/breakPoints.scss';
+@import '../../../assets/variables.scss';
 
 .title {
   font-size: 24px;
@@ -11,4 +12,16 @@
   align-items: start;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+.more {
+  display: block;
+  width: 200px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-transform: uppercase;
+
+  background-color: $background-card;
+  border-radius: 10px;
 }
