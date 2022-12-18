@@ -22,7 +22,7 @@ export const ShowPreview: FC<Props> = ({ name, image, rating, summary }) => {
         <div className={styles.ratingWrapper}>
           <StarRating rating={rating} size={StarRatingSizes.LARGE} />
           <span className={styles.rating}>
-            {rating?.average ? rating?.average?.toString() : 0}/5
+            {rating?.average ? rating?.average?.toString() : 0}/10
           </span>
         </div>
         <h1 className={styles.title}>{name}</h1>

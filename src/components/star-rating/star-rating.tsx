@@ -18,8 +18,8 @@ type Props = Pick<Show, 'rating'> & {
 };
 
 const createRating = (rating: number) => {
-  const rates = Array.from({ length: 5 }, (_, i) => i + 1);
-  const int = Math.floor(rating);
+  const rates = Array.from({ length: 5 }, (_, i) => (i + 1) * 2);
+  const int = Math.round(rating);
   const decimal = rating - int;
 
   return rates.map((item) =>
