@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
+const TABLET_SIZE = 769;
+
 const useIsTablet = (): boolean => {
   const [isTablet, setIsTablet] = useState(false);
   const handlerIsTablet = (): void => {
-    const width = window.innerWidth;
-    setIsTablet(width < 769);
+    setIsTablet(window.innerWidth < TABLET_SIZE);
   };
 
   useEffect(() => {

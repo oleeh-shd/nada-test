@@ -1,18 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { FC } from 'react';
 import styles from './title.module.scss';
 
-type Props = {
+type TitleProps = {
   home?: boolean;
 };
 
-export const Title: FC<Props> = ({ home }) => {
-  const router = useRouter();
+export const Title: FC<TitleProps> = ({ home }) => {
   return (
     <div className={styles.wrapper}>
-      {router.pathname !== '/' && (
+      {!home && (
         <Link href={'/'}>
           <div className={styles.back}>
             <Image src={'/icons/back-arrow.png'} alt="back" width={30} height={30} />

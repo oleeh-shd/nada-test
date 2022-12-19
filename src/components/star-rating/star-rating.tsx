@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { Show } from '../../api/shows-service/types/show-types';
+import { StarRatingSizes } from '../../utils/enums/star-rating-enums';
 
 enum StarStates {
   EMPTY = 'clear',
@@ -8,12 +9,7 @@ enum StarStates {
   FULL = 'full',
 }
 
-export enum StarRatingSizes {
-  SMALL = 'small',
-  LARGE = 'large',
-}
-
-type Props = Pick<Show, 'rating'> & {
+type StarRatingProps = Pick<Show, 'rating'> & {
   size: StarRatingSizes;
 };
 
@@ -31,7 +27,7 @@ const createRating = (rating: number) => {
   );
 };
 
-export const StarRating: FC<Props> = ({ rating, size }) => (
+export const StarRating: FC<StarRatingProps> = ({ rating, size }) => (
   <div>
     {createRating(rating?.average || 0).map((state, i) => (
       <Image

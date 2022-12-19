@@ -5,24 +5,29 @@ import { Card } from '../card/card';
 
 import styles from './show-list.module.scss';
 
-type Props = {
+type ShowListProps = {
   showList: Show[];
 };
 
-export const ShowList: FC<Props> = ({ showList }) => {
-  const [itemsToShow, setItemsToShow] = useState(8);
+const DEFAULT_ITEMS_TO_SHOW = 10;
+
+export const ShowList: FC<ShowListProps> = ({ showList }) => {
+  const [itemsToShow, setItemsToShow] = useState(DEFAULT_ITEMS_TO_SHOW);
+
+  const handleMoreItems = () => setItemsToShow((prev) => prev + DEFAULT_ITEMS_TO_SHOW);
+
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Last Added Shows</h2>
       <div className={styles.list}>
-        {showList.slice(0, itemsToShow).map(({ id, image, summary, rating }) => (
+        {showList.slice(0, itemsToShow).map(({ id, image, summary, rating, name }) => (
           <Link key={id} href={`/show/${id}`}>
-            <Card image={image} summary={summary} rating={rating} />
+            <Card image={image} summary={summary} rating={rating} name={name} />
           </Link>
         ))}
       </div>
       {itemsToShow < showList.length && (
-        <button className={styles.more} onClick={() => setItemsToShow((prev) => prev + 8)}>
+        <button className={styles.more} onClick={handleMoreItems}>
           show more
         </button>
       )}

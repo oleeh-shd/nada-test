@@ -3,10 +3,15 @@ import { Show } from '../../src/api/shows-service/types/show-types';
 import { InfoSection } from '../../src/components/info-section/info-section';
 import { ShowPreview } from '../../src/components/show-preview/show-preview';
 import { Title } from '../../src/components/title/title';
-import { Cast } from '../../src/api/shows-service/types/cast-types';
 import { ShowsService } from '../../src/api/shows-service/shows-service';
+import { normalizeInfo, ShowInfo } from '../../src/utils/normalize-info';
+import { nomalizeCast } from '../../src/utils/normalize-cast';
 
-const Show: NextPage<{ show: Show; cast: Cast[] }> = ({ show, cast }) => {
+const Show: NextPage<{ show: Show; showInfo: ShowInfo[]; cast: ShowInfo[] }> = ({
+  show,
+  showInfo,
+  cast,
+}) => {
   return (
     <>
       <Title />
@@ -16,7 +21,7 @@ const Show: NextPage<{ show: Show; cast: Cast[] }> = ({ show, cast }) => {
         rating={show.rating}
         summary={show.summary}
       />
-      <InfoSection show={show} cast={cast} />
+      <InfoSection show={show} cast={cast} showInfo={showInfo} />
     </>
   );
 };
@@ -39,12 +44,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { data: show } = await ShowsService.getShowById(Number(params?.id));
     const { data: cast } = await ShowsService.getCastByShowId(Number(params?.id));
 
+    const normalizedInfo = normalizeInfo(show);
+    const normalizedCast = nomalizeCast(cast);
+
     return {
-      props: { show, cast },
+      props: { show, showInfo: normalizedInfo, cast: normalizedCast },
     };
   } catch (error) {
     return {
-      props: { show: {}, cast: [] },
+      notFound: true,
     };
   }
 };

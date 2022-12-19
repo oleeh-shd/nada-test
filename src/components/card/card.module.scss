@@ -20,8 +20,7 @@
         0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
     }
     .description {
-      overflow: visible;
-      display: block;
+      -webkit-line-clamp: 6;
     }
   }
 
@@ -64,5 +63,20 @@
   @media screen and (max-width: 330px) {
     width: 120px;
     -webkit-line-clamp: 2;
+  }
+}
+
+.imageWrapper {
+  width: 250px;
+  height: 250px;
+
+  & > img {
+    position: unset !important;
+    border-radius: 10px 10px 0 0;
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 160px;
+    height: 160px;
   }
 }

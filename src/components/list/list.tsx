@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { ListTypes, ShowInfo } from '../info-section/info-section';
+import { ListTypes } from '../../utils/enums/list-enums';
+import { ShowInfo } from '../../utils/normalize-info';
 import styles from './list.module.scss';
 
-type Props = {
+type ListProps = {
   title: string;
   info: ShowInfo[];
   type?: ListTypes;
 };
 
-export const List: FC<Props> = ({ title, info, type = ListTypes.INFO }) => {
+export const List: FC<ListProps> = ({ title, info, type = ListTypes.INFO }) => {
   return (
     <div className={styles.wrapper}>
       <h4 className={styles.title}>{title}</h4>
@@ -20,12 +21,7 @@ export const List: FC<Props> = ({ title, info, type = ListTypes.INFO }) => {
             <li key={key} className={styles.listItem}>
               {type === ListTypes.STARRING && (
                 <div className={styles.avatar}>
-                  <Image
-                    src={image ? image : '/icons/default-avatar.png'}
-                    alt={'avatar'}
-                    width={40}
-                    height={40}
-                  />
+                  <Image src={image || '/icons/default-avatar.png'} alt={`${key}-avatar`} fill />
                 </div>
               )}
               <span className={styles.key}>{key}</span>
