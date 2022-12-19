@@ -1,6 +1,10 @@
-import { Network, Schedule, Show } from '../api/shows-service/types/show-types';
+import { Network, Schedule, Show } from '../../api/shows-service/types/show-types';
 
-export type ShowInfo = { key: string; value: string | null; image?: string | null };
+export type ShowInfo = {
+  key: string;
+  value: string | string[] | Schedule | Network | null;
+  image?: string | null;
+};
 
 export const normalizeInfo = (show: Show): ShowInfo[] => {
   const { genres, status, schedule, network } = show;
@@ -23,12 +27,12 @@ export const normalizeInfo = (show: Show): ShowInfo[] => {
     if (key === 'genres') {
       return {
         key,
-        value: (value as string[]).join(' ') || null,
+        value: (value as string[])?.join(' ') || null,
       };
     }
     return {
       key,
       value: value || null,
     };
-  }) as ShowInfo[];
+  });
 };

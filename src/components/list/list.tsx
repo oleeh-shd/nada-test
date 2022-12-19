@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { ListTypes } from '../../utils/enums/list-enums';
-import { ShowInfo } from '../../utils/normalize-info';
+import { ShowInfo } from '../../utils/normalize-info/normalize-info';
 import styles from './list.module.scss';
 
 type ListProps = {
@@ -25,7 +25,7 @@ export const List: FC<ListProps> = ({ title, info, type = ListTypes.INFO }) => {
                 </div>
               )}
               <span className={styles.key}>{key}</span>
-              <span className={styles.value}>{value}</span>
+              <span className={styles.value}>{value as string}</span>
             </li>
           );
         })}

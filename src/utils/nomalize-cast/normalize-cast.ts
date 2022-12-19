@@ -1,5 +1,5 @@
-import { Cast } from '../api/shows-service/types/cast-types';
-import { ShowInfo } from './normalize-info';
+import { Cast } from '../../api/shows-service/types/cast-types';
+import { ShowInfo } from '../normalize-info/normalize-info';
 
 export const nomalizeCast = (cast: Cast[]): ShowInfo[] => {
   return cast.map((item) => ({

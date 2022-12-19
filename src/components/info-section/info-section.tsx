@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Show } from '../../api/shows-service/types/show-types';
 import { ListTypes } from '../../utils/enums/list-enums';
-import { ShowInfo } from '../../utils/normalize-info';
+import { ShowInfo } from '../../utils/normalize-info/normalize-info';
 import { List } from '../list/list';
 import styles from './info-section.module.scss';
 

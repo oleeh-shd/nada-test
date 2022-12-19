@@ -4,10 +4,10 @@ import { InfoSection } from '../../src/components/info-section/info-section';
 import { ShowPreview } from '../../src/components/show-preview/show-preview';
 import { Title } from '../../src/components/title/title';
 import { ShowsService } from '../../src/api/shows-service/shows-service';
-import { normalizeInfo, ShowInfo } from '../../src/utils/normalize-info';
-import { nomalizeCast } from '../../src/utils/normalize-cast';
+import { normalizeInfo, ShowInfo } from '../../src/utils/normalize-info/normalize-info';
+import { nomalizeCast } from '../../src/utils/nomalize-cast/normalize-cast';
 
-const Show: NextPage<{ show: Show; showInfo: ShowInfo[]; cast: ShowInfo[] }> = ({
+const ShowPage: NextPage<{ show: Show; showInfo: ShowInfo[]; cast: ShowInfo[] }> = ({
   show,
   showInfo,
   cast,
@@ -57,4 +57,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 };
 
-export default Show;
+export default ShowPage;
